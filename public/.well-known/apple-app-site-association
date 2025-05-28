@@ -1,0 +1,24 @@
+{
+  "applinks": {
+    "apps": [],    
+    "details": [
+      {
+        "appIDs": ["952TMR89B7.com.junkieapp.junkie"],
+        "components": [
+            {
+              "*": "",
+              "comment": "Matches all routes"
+            },
+            {
+                "/": "/profile/*",
+                "comment": "Matches any profile URL"
+            },
+            {
+              "/": "/livestream/*/*",
+              "comment": "Matches any livestream URL"
+            }            
+        ]
+      }
+    ]
+  }
+}

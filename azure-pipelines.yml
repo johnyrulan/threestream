@@ -1,0 +1,42 @@
+# Node.js with Vue
+# Build a Node.js project that uses Vue.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- develop
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  - group: UIBuildModeGroup
+  - name: UI_BUILD_MODE
+    ${{ if eq( variables['Build.SourceBranchName'], 'main' ) }}: 
+      value: production
+    ${{ if ne( variables['Build.SourceBranchName'], 'main' ) }}: 
+      value: staging
+  - name: STATIC_TOKEN
+    ${{ if eq( variables['Build.SourceBranchName'], 'main' ) }}: 
+      value: $(PROD_STATIC_TOKEN)
+    ${{ if ne( variables['Build.SourceBranchName'], 'main' ) }}: 
+      value: $(DEV_STATIC_TOKEN)
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install --legacy-peer-deps
+    npm run build -- --mode $(UI_BUILD_MODE)    
+  displayName: 'Install, Build & Test'
+
+- task: AzureStaticWebApp@0
+  condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
+  inputs:
+    app_location: 'dist'
+    skip_app_build: true
+    azure_static_web_apps_api_token: $(STATIC_TOKEN)

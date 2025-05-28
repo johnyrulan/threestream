@@ -1,0 +1,11 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.junkieapp.junkie",
+        "sha256_cert_fingerprints":
+          ["E9:31:1B:E5:CA:38:65:73:F6:85:98:6B:74:AA:7D:AC:AE:08:AA:B9:D3:5F:1A:4B:DD:B1:E2:0F:FE:CF:66:EF"]
+      }
+    }
+]
