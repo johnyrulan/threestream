@@ -1,5 +1,5 @@
 <template>
-<a :href="`/livestream/${props.livestream.id}/attend`" :class="{ 'pointer-cursor': !disabled }" class="card-container position-relative">
+<a :href="`/#/livestream/${props.livestream.id}/attend`" :class="{ 'pointer-cursor': !disabled }" class="card-container position-relative">
     <img id="mainImg" v-if="livestream?.imageUrl" autoplay loop :src="getImg()" class="rounded-4 w-full">
     <img id="mainImg" v-else autoplay loop src="@/assets/default-livestream-image.png" class="rounded-4 w-full">       
 
