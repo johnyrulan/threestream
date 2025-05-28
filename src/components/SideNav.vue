@@ -113,7 +113,7 @@
                 </span>
             </li>
             <li class="nav-item">
-                <a :href="`/profile/${currentUser.name}`" class="nav-link" role="button" @click="collapseNav">
+                <a :href="`/profile/${currentUser?.name}`" class="nav-link" role="button" @click="collapseNav">
                     <font-awesome-icon icon="fa-solid fa-user" class="h-5" /> <span class="ms-1">My Profile</span>
                 </a>
             </li>
