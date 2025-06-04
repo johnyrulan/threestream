@@ -9,9 +9,9 @@
                             <img :src="promoImageUrl" class="rounded-3" @error="$event.target.src = defaultPromoImage"/>
                         </span>
                         <h1 class="ls-tight font-bolder h2">
-                            Sign In into JUNKIE
+                            Sign In
                         </h1>
-                        <p class="mt-2">Buy, Sell, & Trade Popular Collectibles on JUNKIE</p>
+                        <p class="mt-2">Buy, Sell, & Trade Popular Collectibles on ThreeStream</p>
                     </div>
                     <div class="mt-4">
                         <span class="text-md font-bold">Don't have an account? </span>
@@ -52,8 +52,8 @@
                             <img :src="promoImageUrl" class="rounded-3" @error="$event.target.src = defaultPromoImage"/>
                         </span>
                         <h1 class="ls-tight font-bolder h2" v-if="promoDescriptionText">{{ promoDescriptionText }}</h1>
-                        <h1 class="ls-tight font-bolder h2" v-else>Sign Up for JUNKIE</h1>
-                        <p class="mt-2">Buy, Sell, & Trade Popular Collectibles on JUNKIE</p>
+                        <h1 class="ls-tight font-bolder h2" v-else>Sign Up</h1>
+                        <p class="mt-2">Buy, Sell, & Trade Popular Collectibles on ThreeStream</p>
                     </div>
                     <div class="mt-4">
                         <span class="font-bold text-md">Already have an account? </span>
@@ -110,7 +110,7 @@
                         <h1 class="ls-tight font-bolder h2">
                             Reset your password
                         </h1>
-                        <p class="mt-2">Buy, Sell, & Trade Popular Collectibles on JUNKIE</p>
+                        <p class="mt-2">Buy, Sell, & Trade Popular Collectibles on ThreeStream</p>
                     </div>
                     <div class="mt-4">
                         <span class="text-md font-bold">Don't have an account? </span>
